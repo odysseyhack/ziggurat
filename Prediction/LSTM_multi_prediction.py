@@ -38,7 +38,7 @@ createModel()
 modelTrain()
 modelPredict()
 predict_step()
-plot2()
+#plot2()
 plot3()
 plot4()
 
@@ -294,40 +294,40 @@ def target_by_company(raw_model_output, num_companies):
 
 # In[24]:
 
-def plot2():
-	Yt = do_inverse_transform(y_test)
+# def plot2():
+# 	Yt = do_inverse_transform(y_test)
 
-	MT = target_by_company(Yt, num_companies)
-	MT.shape
-
-
-	# In[25]:
+# 	MT = target_by_company(Yt, num_companies)
+# 	MT.shape
 
 
-	plt.figure(figsize = (15,10))
+# 	# In[25]:
 
-	companies_to_show = [0,1,2,3] #select one of [0,1,2,3] to see only one
+
+# 	plt.figure(figsize = (15,10))
+
+# 	companies_to_show = [0,1,2,3] #select one of [0,1,2,3] to see only one
 
 
 		
-	for id_company in companies_to_show:
-		for i in range(0,len(MP[id_company])):
-			plt.plot([x + i*forward_days for x in range(len(MP[id_company][i]))], MP[id_company][i], color=colors[id_company])
-		plt.plot(0,MP[id_company][0][0] ,color=colors[id_company], label='predict_{}'.format(companies_names[id_company])) #only to place the label
+# 	for id_company in companies_to_show:
+# 		for i in range(0,len(MP[id_company])):
+# 			plt.plot([x + i*forward_days for x in range(len(MP[id_company][i]))], MP[id_company][i], color=colors[id_company])
+# 		plt.plot(0,MP[id_company][0][0] ,color=colors[id_company], label='predict_{}'.format(companies_names[id_company])) #only to place the label
 
 	   
 
-	for id_company in companies_to_show:
-		plt.plot(MT[id_company], label='target_{}'.format(companies_names[id_company]))
+# 	for id_company in companies_to_show:
+# 		plt.plot(MT[id_company], label='target_{}'.format(companies_names[id_company]))
 
-	plt.legend(loc='best')
-	plt.show()
+# 	plt.legend(loc='best')
+# 	plt.show()
 
 
-# ### Predicting all the data to see how the model reacts to Train and Test set
-# 
+# # ### Predicting all the data to see how the model reacts to Train and Test set
+# # 
 
-# In[26]:
+# # In[26]:
 
 def plot3():
 
