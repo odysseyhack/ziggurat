@@ -145,7 +145,7 @@ def preProcess():
 
 #Get the data and splits in input X and output Y, by spliting in `n` past days as input X 
 #and `m` coming days as Y.
-def processData(data, look_back, forward_days,num_companies,jump=1):
+def processData(data, look_back, forward_days,jump=1):
     X,Y = [],[]
     for i in range(0,len(data) -look_back -forward_days +1, jump):
         X.append(data[i:(i+look_back)])
@@ -156,10 +156,10 @@ def processData(data, look_back, forward_days,num_companies,jump=1):
 # In[13]:
 
 def createModel():
-	X_test,y_test = processData(array_test,look_back,forward_days,num_companies,forward_days)
+	X_test,y_test = processData(array_test,look_back,forward_days,forward_days)
 	y_test = np.array([list(a.ravel()) for a in y_test])
 
-	X,y = processData(array_train,look_back,forward_days,num_companies)
+	X,y = processData(array_train,look_back,forward_days)
 	y = np.array([list(x.ravel()) for x in y])
 
 	from sklearn.model_selection import train_test_split
