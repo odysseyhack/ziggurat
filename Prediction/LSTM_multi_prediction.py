@@ -291,57 +291,6 @@ def target_by_company(raw_model_output, num_companies):
                 matrix_target[i].append(output[i+j])
     return np.array(matrix_target)
 
-
-# In[24]:
-
-# def plot2():
-# 	Yt = do_inverse_transform(y_test)
-
-# 	MT = target_by_company(Yt, num_companies)
-# 	MT.shape
-
-
-# 	# In[25]:
-
-
-# 	plt.figure(figsize = (15,10))
-
-# 	companies_to_show = [0,1,2,3] #select one of [0,1,2,3] to see only one
-
-
-		
-# 	for id_company in companies_to_show:
-# 		for i in range(0,len(MP[id_company])):
-# 			plt.plot([x + i*forward_days for x in range(len(MP[id_company][i]))], MP[id_company][i], color=colors[id_company])
-# 		plt.plot(0,MP[id_company][0][0] ,color=colors[id_company], label='predict_{}'.format(companies_names[id_company])) #only to place the label
-
-	   
-
-# 	for id_company in companies_to_show:
-# 		plt.plot(MT[id_company], label='target_{}'.format(companies_names[id_company]))
-
-# 	plt.legend(loc='best')
-# 	plt.show()
-
-
-# # ### Predicting all the data to see how the model reacts to Train and Test set
-# # 
-
-# # In[26]:
-
-def plot3():
-
-	X_all,y_all = processData(array,look_back,forward_days,num_companies,forward_days)
-	y_all = np.array([list(a.ravel()) for a in y_all])
-
-
-	# In[27]:
-
-
-	Xt = model.predict(X_all)
-	Xt.shape
-
-
 	# In[28]:
 
 
